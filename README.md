@@ -67,14 +67,11 @@ Socket Mode means the bot connects outbound — no public URL or ngrok needed.
 ## Step 5 — Create slash commands
 
 1. Go to **Features → Slash Commands → Create New Command**.
-2. Fill in the first command:
+2. Fill in the command:
    - **Command:** `/nocam`
-   - **Short description:** `Send the dare wheel to camera-off offenders`
-   - **Usage hint:** `@user1 @user2 …`
-3. Click **Save**, then click **Create New Command** again for the second:
-   - **Command:** `/standup-morning`
-   - **Short description:** `Manually fire the morning camera-on reminder`
-4. Save.
+   - **Short description:** `Send the dare wheel to camera-off offenders (admin only)`
+   - **Usage hint:** `@user1 @user2 … | list | triggermessage`
+3. Save.
 
 ---
 
@@ -124,7 +121,7 @@ Open **`config.js`** to tweak:
 | `standupDays` | Weekdays the bot is active (0=Sun, 1=Mon, ..., 6=Sat) |
 | `videoStandupDays` | Days on which the camera-on reminder fires (e.g. `[3]` for Wed) |
 | `morningReminderChannelId` | Slack Channel ID for the morning notification |
-| `morningReminderTime` | Time to send reminder (e.g. `{ hour: 9, minute: 0 }`) |
+| `morningReminderTime` | Time to send reminder (e.g. `{ hour: 9, minute: 30 }`) |
 | `timezone` | IANA timezone for the scheduler (e.g. `Asia/Kolkata`) |
 | `adminUserIds` | List of Slack member IDs allowed to run admin commands |
 | `spinExpiryHours` | How long the spin button stays valid |
@@ -159,7 +156,7 @@ You should see:
    Standup days:  Mon, Tue, Wed, Thu, Fri
    Dares loaded:  12
    GIFs cached:   12/12
-   Morning reminder: 9:00 on Wed (Asia/Kolkata) → #C0139549ZSS
+   Morning reminder: 9:30 on Wed (Asia/Kolkata) → #C0139549ZSS
 ```
 Alternatively, use the **manual reminder** command once you are in Slack.
 
@@ -182,7 +179,7 @@ Each person gets a private DM with a big SPIN button. They click it, watch the a
 
 **3. Manually fire the morning reminder**
 ```
-/standup-morning
+/nocam triggermessage
 ```
 Useful if the bot was offline during the scheduled time or you want to nudge the team early.
 

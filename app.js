@@ -240,7 +240,7 @@ app.command("/nocam", async ({ command, ack, client, respond }) => {
   const lines = [];
   if (sent.length)
     lines.push(
-      `✅ Dare wheel sent to: ${sent.map((u) => `<@${u}>`).join(", ")}`,
+      `✅ Face the Wheel sent to: ${sent.map((u) => `<@${u}>`).join(", ")}`,
     );
   if (failed.length)
     lines.push(
@@ -376,7 +376,7 @@ async function announceIfConfigured(client, userId, dareIndex) {
   try {
     await client.chat.postMessage({
       channel: config.announcementChannelId,
-      text: `🎡 <@${userId}> just spun the Dare Wheel and got *Dare #${dareIndex + 1}*! 🔥 Will they follow through? 👀`,
+      text: `🎡 <@${userId}> just spun the Face the Wheel and got *Dare #${dareIndex + 1}*! 🔥 Will they follow through? 👀`,
     });
   } catch (err) {
     console.error("Announcement failed:", err.message);

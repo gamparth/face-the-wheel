@@ -8,7 +8,7 @@ module.exports = {
   // Days on which the video standup (camera-on call) happens.
   // The morning reminder will only fire on these days.
   // Default: every Monday (change to match your team's schedule)
-  videoStandupDays: [3],
+  videoStandupDays: [4],
 
   // ─── MORNING REMINDER ─────────────────────────────────────────────────────
   // Channel that receives the "camera on!" morning message.

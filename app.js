@@ -82,9 +82,9 @@ function formatDareMessage(dareIndex, username) {
   return [
     `Hey <@${username}>! :wave: Looks like your camera stayed off today, so Face the Wheel Lottery has spoken. :ferris_wheel:`,
     "",
-    `Your dare for next standup: *${dares[dareIndex]}*`,
+    `Your dare for today's standup: *${dares[dareIndex]}*`,
     "",
-    `Next call, we'll be watching. Good luck! :smile:`,
+    `You'll be performing this during today's standup. Good luck! :smile:`,
   ].join("\n");
 }
 
@@ -106,7 +106,7 @@ function buildSpinMessage(spinId, userId) {
       mrkdwnBlock(
         [
           `Uh oh <@${userId}>, camera off! The wheel has been waiting for you. :ferris_wheel:`,
-          `Spin it to reveal your dare. Whatever it lands on, the team will be watching at the next standup. :eyes:`,
+          `Spin it to reveal your dare. Whatever it lands on, you'll be performing it during today's standup. :eyes:`,
         ].join("\n"),
       ),
       { type: "divider" },
